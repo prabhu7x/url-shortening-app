@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;700&family=Poppins:ital,wght@0,500;1,700&display=swap');
+
+@mixin poppins-medium {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @mixin poppins-bold {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+  }  
+
+//primary
+$Cyan: hsl(180, 66%, 49%);
+$Dark-Violet: hsl(257, 27%, 26%);
+
+//secondary
+$Red: hsl(0, 87%, 67%);
+
+// neutral
+$Gray: hsl(0, 0%, 75%);
+$Grayish-Violet: hsl(257, 7%, 63%);
+$Very-Dark-Blue: hsl(255, 11%, 22%);
+$Very-Dark-Violet: hsl(260, 8%, 14%);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // outline: auto;
+}
+body {
+    background-color: gray;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+    opacity: .5;
+  }
+}
+
+@media screen and (min-width: 375px) {
+   body {
+    background-color: white;
+    font-size: 18px;
+   } 
+   header {
+    position: relative;
+    padding: 2rem;
+    color: white;
+    @include poppins-medium();
+    .hero {
+        display: flex;
+        padding: 2rem 0;
+        justify-content: space-between;
+        img {
+            height: 40px;
+        }
+    }
+    .off {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+    }
+    .links {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+        background-color: $Dark-Violet;
+        text-align: center;
+        border-radius: 1rem;
+        position: absolute;
+        width: 80%;
+        left: 10%;
+        padding: 2rem;
+        ul {
+            list-style-type: none;
+            border-bottom: 1px dotted gray;
+            & > li:last-child {
+              margin-bottom: 1.5rem;
+            }
+            li{
+                padding: .7rem;
+                @include poppins-bold();
+                &:hover {
+                  color: $Gray;
+                }
+            }
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            @include poppins-bold();
+            & > button:first-child {
+              margin-top: 1.5rem;
+            }
+          button {
+            all: unset;
+            padding: .7rem;
+            &:hover {
+              background-color: $Cyan;
+              border-radius: 2rem;
+            }
+          }
+          
+        }
+    }
+    #sign-up{
+          background-color: $Cyan;
+          text-decoration: none;
+          color: white;
+          padding: .5rem 1.5rem;
+          border-radius: 30px;
+          @include poppins-bold();
+          &:hover {
+            opacity: .5;
+          }
+        }
+   }
+
+   section {
+      text-align: center;
+    img {
+      width: 100%;
+    }
+    h1 {
+      @include poppins-bold();
+      font-size: 2rem;
+    }
+    p {
+      color: $Gray;
+      @include poppins-medium();
+      line-height: 2rem;
+      padding: 2rem;
+    }
+    button {
+      all: unset;
+      padding: .7rem 2rem;
+      color: white;
+      @include poppins-medium();
+      background-color: $Cyan;
+      border-radius: 2rem;
+      margin-bottom: 10rem;
+    }
+   }
+
+   .sorten {
+    background-color: $Gray;
+    position: relative;
+    overflow: visible;
+    .pasteLink-cont {
+      background-color: $Dark-Violet;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      margin: 1rem;
+      margin: 0 auto;
+      width: min(90%, 600px);
+      border-radius: .7rem;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      input {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: solid red 2px;
+        @include poppins-bold();
+        &::placeholder {
+          color: $Red;
+          font-size: 1rem;
+        }
+      }
+      small {
+        color: $Red;
+        font-style: italic;
+        font-family: 'poppins';
+        font-size: small;
+        text-align: start;
+        padding: .3rem 0 1rem .3rem;
+      }
+      button {
+        padding: 1rem;
+        background-color: $Cyan;
+        border: none;
+        border-radius: .5rem;
+        @include poppins-bold();
+        font-size: 1rem;
+        color: white;
+        font-size: 1.1rem;
+        &:disabled {
+          background-color: $Gray;
+        }
+      }
+    }
+
+    .sortLinks-container {
+      @include poppins-bold();
+      margin: 1rem;
+      padding-top: 8rem;
+      border-radius: .5rem;
+      h5 {
+        padding: 1rem;
+      }
+      div {
+        div {
+         margin: 0; 
+          h5 {
+           border-top: dotted gray 1px;
+           color: $Cyan;
+          }
+        }
+        margin: 1.5rem 0;
+        background-color: white;
+        border-radius: .5rem;
+      }
+      button {
+        width: calc(100% - 1.9rem);
+        padding: .8rem;
+        background-color: $Cyan;
+        border: none;
+        border-radius: .5rem;
+        @include poppins-bold();
+        color: white;
+        font-size: 1rem;
+        margin: 0 1rem 1rem 1rem;
+        &.copied {
+          background: linear-gradient(to left, $Dark-Violet 50%, $Cyan 50%);
+          background-size: 200%, 100%;
+          background-position: right bottom;
+          transition: background 3s ease-out;
+        }
+      }
+    } 
+
+    h2 {
+      @include poppins-bold();
+      text-align: center;
+      padding: 1rem;
+    }
+    p {
+      @include poppins-medium();
+      text-align: center;
+      color: $Grayish-Violet;
+      padding: 1rem;
+    }
+
+    .label-container {
+      @include poppins-medium();
+      text-align: center;
+      padding: 1rem;
+      img {
+        position: absolute;
+        background-color: $Dark-Violet;
+        padding: 1rem;
+        border-radius: 50%;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      div {
+        background-color: white;
+        border-radius: .5rem;
+        margin: 3rem 0;
+        padding: 1rem;
+        position: relative;
+        overflow: visible;
+        p {
+          font-size: large;
+        }
+        h3 {
+          padding-top: 3rem
+        }
+        h2, h3{
+          @include poppins-bold();
+          
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: black;
+    color: white;
+    .boost {
+      padding: 5rem 0;
+      text-align: center;
+      background-image: url('./assets//images/bg-boost-mobile.svg');
+      background-color: $Dark-Violet;
+      h1 {
+        padding: 1rem;
+        @include poppins-bold();
+        color: white;
+      }
+      button {
+        padding: 1rem 3rem;
+        background-color: $Cyan;
+        border: none;
+        border-radius: 2rem;
+        @include poppins-bold();
+        font-size: 1rem;
+        color: white;
+        font-size: 1.1rem;
+      }
+    }
+    .shortly {
+      color: white;
+      @include poppins-medium();
+      text-align: center;
+      h1 {
+        @include poppins-bold();
+        padding: 1.5rem;
+      }
+      ul {
+        @include poppins-bold();
+        padding: 1rem;
+        span {
+          @include poppins-bold();
+          display: inline-block;
+          margin-bottom: 1.5rem;
+        }
+        li {
+          @include poppins-medium();
+          list-style-type: none;
+          padding: .5rem;
+          color: $Gray;
+        }
+      }
+    }
+    .social-med-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        padding: 1rem;
+        img {
+          width: 30px;
+          background-color: black;
+        }
+      }
+    }
+    .attribution {
+      text-align: center;
+    }
+  }
+}
+
+
+@keyframes drop {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(100px); }
+  100% { transform: translateX(0); }
+}
+
+
+@media screen and (min-width: 900px) {
+ header {
+  display: flex; 
+  img {
+    margin-right: 1rem;
+  }
+  .menu {
+    display: none;
+  }
+  .off, .links {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        color: $Gray;
+        list-style: none;
+        @include poppins-bold();
+        padding: 1.5rem;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      & > button:last-child {
+        background-color: $Cyan;
+        color: white;
+        &:active {
+          opacity: 50%;
+        }
+      }
+      & > button:first-child {
+        &:hover {
+          color: black;
+        }
+      }
+      button {
+        all: unset;
+        @include poppins-bold();
+        padding: .6rem 1.5rem;
+        color: $Gray;
+        margin: 1rem;
+        border-radius: 2rem;
+      }
+    }
+  }
+ }   
+
+ section {
+  padding: 2rem;
+  margin-bottom: 10rem;
+  display: grid;
+  text-align: start;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+  "header img"
+  "text   img"
+  "button img"
+  ;
+  img {
+    grid-area: img;
+  }
+  h1 {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+  p {
+    line-height: 2rem;
+    font-size: 1.2rem;
+    padding: 0;
+  }
+  button {
+    all: unset;
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    background-color: $Cyan;
+    @include poppins-bold();
+    color: white;
+  }
+ }
+
+ .sorten {
+  .pasteLink-cont {
+    background-image: url('./assets/images/bg-shorten-desktop.svg');
+    background-size: cover;
+    background-position-x: center;
+    background-color: $Dark-Violet;
+    padding: 3rem;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 85% auto;
+    grid-template-rows: auto 1rem;
+    grid-template-areas: 
+    "input btn"
+    "input btn"
+    ; 
+    input {
+      grid-area: input;
+      margin-right: 1.5rem;
+    }
+    small {
+      padding: 0;
+    }
+    button {
+      grid-area: btn;
+    }
+  }
+  .sortLinks-container {
+    margin: 2rem;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .4rem;
+      div {
+        h5 {
+          border-top: none;
+          font-size: 1.1rem;
+          @include poppins-medium();
+        }
+      }
+      
+      h5 {
+        padding: 0;
+        margin: 1rem;
+        font-size: 1.1rem;
+        @include poppins-medium();
+        margin-right: 2rem;
+      }
+      button {
+        all: unset;
+        background-color: $Cyan;
+        padding: .6rem 1.5rem;
+        border-radius: .5rem;
+        width: 80px;
+        text-align: center;
+        color: white;
+        &.copied {
+        }
+      }
+    }  
+  }
+ }
+
+}

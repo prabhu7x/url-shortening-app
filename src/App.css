@@ -1,0 +1,521 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;700&family=Poppins:ital,wght@0,500;1,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gray;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 375px) {
+  body {
+    background-color: white;
+    font-size: 18px;
+  }
+  header {
+    position: relative;
+    padding: 2rem;
+    color: white;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  header .hero {
+    display: flex;
+    padding: 2rem 0;
+    justify-content: space-between;
+  }
+  header .hero img {
+    height: 40px;
+  }
+  header .off {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+  }
+  header .links {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+    background-color: hsl(257, 27%, 26%);
+    text-align: center;
+    border-radius: 1rem;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    padding: 2rem;
+  }
+  header .links ul {
+    list-style-type: none;
+    border-bottom: 1px dotted gray;
+  }
+  header .links ul > li:last-child {
+    margin-bottom: 1.5rem;
+  }
+  header .links ul li {
+    padding: 0.7rem;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+  }
+  header .links ul li:hover {
+    color: hsl(0, 0%, 75%);
+  }
+  header .links nav {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+  }
+  header .links nav > button:first-child {
+    margin-top: 1.5rem;
+  }
+  header .links nav button {
+    all: unset;
+    padding: 0.7rem;
+  }
+  header .links nav button:hover {
+    background-color: hsl(180, 66%, 49%);
+    border-radius: 2rem;
+  }
+  header #sign-up {
+    background-color: hsl(180, 66%, 49%);
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+  }
+  header #sign-up:hover {
+    opacity: 0.5;
+  }
+  section {
+    text-align: center;
+  }
+  section img {
+    width: 100%;
+  }
+  section h1 {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 2rem;
+  }
+  section p {
+    color: hsl(0, 0%, 75%);
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 2rem;
+    padding: 2rem;
+  }
+  section button {
+    all: unset;
+    padding: 0.7rem 2rem;
+    color: white;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    background-color: hsl(180, 66%, 49%);
+    border-radius: 2rem;
+    margin-bottom: 10rem;
+  }
+  .sorten {
+    background-color: hsl(0, 0%, 75%);
+    position: relative;
+    overflow: visible;
+  }
+  .sorten .pasteLink-cont {
+    background-color: hsl(257, 27%, 26%);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 1rem;
+    margin: 0 auto;
+    width: min(90%, 600px);
+    border-radius: 0.7rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .sorten .pasteLink-cont input {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: solid red 2px;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+  }
+  .sorten .pasteLink-cont input::-moz-placeholder {
+    color: hsl(0, 87%, 67%);
+    font-size: 1rem;
+  }
+  .sorten .pasteLink-cont input::placeholder {
+    color: hsl(0, 87%, 67%);
+    font-size: 1rem;
+  }
+  .sorten .pasteLink-cont small {
+    color: hsl(0, 87%, 67%);
+    font-style: italic;
+    font-family: "poppins";
+    font-size: small;
+    text-align: start;
+    padding: 0.3rem 0 1rem 0.3rem;
+  }
+  .sorten .pasteLink-cont button {
+    padding: 1rem;
+    background-color: hsl(180, 66%, 49%);
+    border: none;
+    border-radius: 0.5rem;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 1rem;
+    color: white;
+    font-size: 1.1rem;
+  }
+  .sorten .pasteLink-cont button:disabled {
+    background-color: hsl(0, 0%, 75%);
+  }
+  .sorten .sortLinks-container {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    margin: 1rem;
+    padding-top: 8rem;
+    border-radius: 0.5rem;
+  }
+  .sorten .sortLinks-container h5 {
+    padding: 1rem;
+  }
+  .sorten .sortLinks-container div {
+    margin: 1.5rem 0;
+    background-color: white;
+    border-radius: 0.5rem;
+  }
+  .sorten .sortLinks-container div div {
+    margin: 0;
+  }
+  .sorten .sortLinks-container div div h5 {
+    border-top: dotted gray 1px;
+    color: hsl(180, 66%, 49%);
+  }
+  .sorten .sortLinks-container button {
+    width: calc(100% - 1.9rem);
+    padding: 0.8rem;
+    background-color: hsl(180, 66%, 49%);
+    border: none;
+    border-radius: 0.5rem;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    color: white;
+    font-size: 1rem;
+    margin: 0 1rem 1rem 1rem;
+  }
+  .sorten .sortLinks-container button.copied {
+    background: linear-gradient(to left, hsl(257, 27%, 26%) 50%, hsl(180, 66%, 49%) 50%);
+    background-size: 200%, 100%;
+    background-position: right bottom;
+    transition: background 3s ease-out;
+  }
+  .sorten h2 {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    text-align: center;
+    padding: 1rem;
+  }
+  .sorten p {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    color: hsl(257, 7%, 63%);
+    padding: 1rem;
+  }
+  .sorten .label-container {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    padding: 1rem;
+  }
+  .sorten .label-container img {
+    position: absolute;
+    background-color: hsl(257, 27%, 26%);
+    padding: 1rem;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .sorten .label-container div {
+    background-color: white;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+    padding: 1rem;
+    position: relative;
+    overflow: visible;
+  }
+  .sorten .label-container div p {
+    font-size: large;
+  }
+  .sorten .label-container div h3 {
+    padding-top: 3rem;
+  }
+  .sorten .label-container div h2, .sorten .label-container div h3 {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+  }
+  footer {
+    background-color: black;
+    color: white;
+  }
+  footer .boost {
+    padding: 5rem 0;
+    text-align: center;
+    background-image: url("./assets//images/bg-boost-mobile.svg");
+    background-color: hsl(257, 27%, 26%);
+  }
+  footer .boost h1 {
+    padding: 1rem;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    color: white;
+  }
+  footer .boost button {
+    padding: 1rem 3rem;
+    background-color: hsl(180, 66%, 49%);
+    border: none;
+    border-radius: 2rem;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 1rem;
+    color: white;
+    font-size: 1.1rem;
+  }
+  footer .shortly {
+    color: white;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+  }
+  footer .shortly h1 {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    padding: 1.5rem;
+  }
+  footer .shortly ul {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    padding: 1rem;
+  }
+  footer .shortly ul span {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+  footer .shortly ul li {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    list-style-type: none;
+    padding: 0.5rem;
+    color: hsl(0, 0%, 75%);
+  }
+  footer .social-med-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .social-med-icons a {
+    padding: 1rem;
+  }
+  footer .social-med-icons a img {
+    width: 30px;
+    background-color: black;
+  }
+  footer .attribution {
+    text-align: center;
+  }
+}
+@keyframes drop {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 900px) {
+  header {
+    display: flex;
+  }
+  header img {
+    margin-right: 1rem;
+  }
+  header .menu {
+    display: none;
+  }
+  header .off, header .links {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  header .off ul, header .links ul {
+    display: flex;
+    align-items: center;
+  }
+  header .off ul li, header .links ul li {
+    color: hsl(0, 0%, 75%);
+    list-style: none;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    padding: 1.5rem;
+  }
+  header .off ul li:hover, header .links ul li:hover {
+    color: black;
+  }
+  header .off nav, header .links nav {
+    display: flex;
+    align-items: center;
+  }
+  header .off nav > button:last-child, header .links nav > button:last-child {
+    background-color: hsl(180, 66%, 49%);
+    color: white;
+  }
+  header .off nav > button:last-child:active, header .links nav > button:last-child:active {
+    opacity: 50%;
+  }
+  header .off nav > button:first-child:hover, header .links nav > button:first-child:hover {
+    color: black;
+  }
+  header .off nav button, header .links nav button {
+    all: unset;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    padding: 0.6rem 1.5rem;
+    color: hsl(0, 0%, 75%);
+    margin: 1rem;
+    border-radius: 2rem;
+  }
+  section {
+    padding: 2rem;
+    margin-bottom: 10rem;
+    display: grid;
+    text-align: start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header img" "text   img" "button img";
+  }
+  section img {
+    grid-area: img;
+  }
+  section h1 {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+  section p {
+    line-height: 2rem;
+    font-size: 1.2rem;
+    padding: 0;
+  }
+  section button {
+    all: unset;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    background-color: hsl(180, 66%, 49%);
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: bold;
+    color: white;
+  }
+  .sorten .pasteLink-cont {
+    background-image: url("./assets/images/bg-shorten-desktop.svg");
+    background-size: cover;
+    background-position-x: center;
+    background-color: hsl(257, 27%, 26%);
+    padding: 3rem;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 85% auto;
+    grid-template-rows: auto 1rem;
+    grid-template-areas: "input btn" "input btn";
+  }
+  .sorten .pasteLink-cont input {
+    grid-area: input;
+    margin-right: 1.5rem;
+  }
+  .sorten .pasteLink-cont small {
+    padding: 0;
+  }
+  .sorten .pasteLink-cont button {
+    grid-area: btn;
+  }
+  .sorten .sortLinks-container {
+    margin: 2rem;
+  }
+  .sorten .sortLinks-container div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem;
+  }
+  .sorten .sortLinks-container div div h5 {
+    border-top: none;
+    font-size: 1.1rem;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  .sorten .sortLinks-container div h5 {
+    padding: 0;
+    margin: 1rem;
+    font-size: 1.1rem;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-right: 2rem;
+  }
+  .sorten .sortLinks-container div button {
+    all: unset;
+    background-color: hsl(180, 66%, 49%);
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    width: 80px;
+    text-align: center;
+    color: white;
+  }
+}/*# sourceMappingURL=App.css.map */
